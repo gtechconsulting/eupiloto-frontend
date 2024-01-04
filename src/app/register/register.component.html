@@ -1,0 +1,175 @@
+<div class="col-md-12">
+  <div class="card card-container">
+    <img
+      id="profile-img"
+      src="/assets/imgs/avatar_login.png"
+      class="profile-img-card"
+    />
+    @if (!isSuccessful) {
+    <form
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label for="username">Nome</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          [(ngModel)]="form.name"
+          required
+          minlength="3"
+          maxlength="50"
+          #name="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && name.errors }"
+        />
+        @if (name.errors && f.submitted) {
+        <div class="invalid-feedback">
+          @if (name.errors['required']) {
+          <div>Nome é obrigatório</div>
+          }
+          @if (name.errors['minlength']) {
+          <div>Nome inválido</div>
+          }
+          
+        </div>
+        }
+      </div>
+      <div class="col-md-6 form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          [(ngModel)]="form.email"
+          required
+          email
+          #email="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+        />
+        @if (email.errors && f.submitted) {
+        <div class="invalid-feedback">
+          @if (email.errors['required']) {
+          <div>Email é obrigatório</div>
+          }
+          @if (email.errors['email']) {
+          <div>Email inválido.</div>
+          }
+        </div>
+        }
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label for="cpf">CPF</label>
+        <input
+          type="text"
+          class="form-control"
+          name="cpf"
+          [(ngModel)]="form.cpf"
+          required
+          mask="000.000.000-00"
+          minlength="11"
+          maxlength="14"
+          #cpf="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && cpf.errors }"
+        />
+        @if (cpf.errors && f.submitted) {
+        <div class="invalid-feedback">
+          @if (cpf.errors['required']) {
+          <div>CPF é obrigatório</div>
+          }
+          @if (cpf.errors['minlength']) {
+          <div>CPF inválido.</div>
+          }
+        </div>
+        }
+      </div>
+      <div class="col-md-6 form-group">
+        <label for="cpf">Telefone</label>
+        <input
+          type="text"
+          class="form-control"
+          name="phone"
+          [(ngModel)]="form.phone"
+          mask="(00) 0 0000 0000"
+          required
+          #phone="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && phone.errors }"
+        />
+        @if (phone.errors && f.submitted) {
+        <div class="invalid-feedback">
+          @if (phone.errors['required']) {
+          <div>Telefone é obrigatório</div>
+          }
+        </div>
+        }
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label for="password">Senha</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+        />
+        @if (password.errors && f.submitted) {
+        <div class="invalid-feedback">
+          @if (password.errors['required']) {
+          <div>Senha é obrigatória.</div>
+          }
+          @if (password.errors['minlength']) {
+          <div>Senha precisa ter no mínimo 6 caracteres.</div>
+          }
+        </div>
+        }
+      </div>
+      <div class="col-md-6 form-group">
+        <label for="password">Repetir Senha</label>
+        <input
+          type="password"
+          class="form-control"
+          name="repassword"
+          [(ngModel)]="form.repassword"
+          required
+          minlength="6"
+          #repassword="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && repassword.errors }"
+        />
+        @if (repassword.errors && f.submitted) {
+        <div class="invalid-feedback">
+          @if (repassword.errors['required']) {
+          <div>Senha é obrigatória.</div>
+          }
+          @if (repassword.errors['minlength']) {
+          <div>Senha precisa ter no mínimo 6 caracteres.</div>
+          }
+        </div>
+        }
+      </div>
+    </div>
+      
+      <div class="form-group">
+        <button class="btn btn-primary btn-block">Registrar</button>
+      </div>
+
+      @if (f.submitted && isSignUpFailed) {
+      <div class="alert alert-warning">
+        {{ errorMessage }}
+      </div>
+      }
+    </form>
+    } @else {
+    <div class="alert alert-success">Cadastro realizado com sucesso!</div>
+    }
+  </div>
+</div>

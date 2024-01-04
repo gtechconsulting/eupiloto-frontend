@@ -1,0 +1,75 @@
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+.primary-color {
+  color: #2172a6 !important;
+}
+
+.card-container.card {
+  max-width: 400px !important;
+  padding: 40px 40px;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+  width: 150px;
+  height: 110px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 5%;
+  -webkit-border-radius: 5%;
+  border-radius: 5%;
+}
+
+.card-container {
+  margin-right: 2% !important;
+}
+
+.btn-primary {
+  background-color: #2172a6 !important;
+}
+
+.login-text {
+  margin-top: 12%;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.nav-link {
+  color: #2172a6 !important;
+  text-align: center;
+}
+
+.title {
+  color: black !important;
+  text-align: center;
+  font-size: 22px;
+}
+
+
+.content {
+  color: #2172a6 !important;
+  text-align: justify;
+  font-size: 14px;
+}
+
+.content-card {
+  margin-top: 55px;
+}

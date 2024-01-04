@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+  
+  @media (min-width: 2500px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+      max-width: 2200px;
+    }     
+  }
+  
+  @media screen and (min-width: 1900px) and (max-width: 2499px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+      max-width: 1860px;
+    }     
+  }
+  
+  @media screen and (min-width: 1600px) and (max-width: 1899px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+      max-width: 1540px;
+      max-height: 800px;
+    }     
+  }
+  
+  @media screen and (min-width: 1050px) and (max-width: 1559px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+      max-width: 1140px;
+      max-height: 600px;
+    }     
+  }
+  
+  @media screen and (min-width: 992px)  and (max-width: 1049px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: 960px;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px){
+    .container, .container-md, .container-sm {
+        max-width: 720px;
+    }
+  }
+
+  @media screen and (min-width: 576px)  and (max-width: 767px) {
+    .container, .container-sm {
+      max-width: 540px;
+    }
+  }
