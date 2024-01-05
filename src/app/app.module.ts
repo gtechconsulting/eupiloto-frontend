@@ -16,6 +16,10 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { MeteorologyComponent } from './meteorology/meteorology.component';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+
+
 
 @NgModule({
   declarations: [
@@ -34,7 +38,9 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxMaskDirective
+    NgxMaskDirective,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [httpInterceptorProviders, provideNgxMask()],
   bootstrap: [AppComponent]

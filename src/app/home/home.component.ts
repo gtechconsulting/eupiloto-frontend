@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
+import { Router } from '@angular/router';
+import { StorageService } from '../_services/storage.service';
 
 @Component({
   selector: 'app-home',
@@ -8,26 +10,15 @@ import { UserService } from '../_services/user.service';
 })
 export class HomeComponent implements OnInit {
   content?: string;
+  userName?: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router, private storageService: StorageService) { }
 
   ngOnInit(): void {
-    this.userService.getPublicContent().subscribe({
-      next: data => {
-        this.content = data;
-      },
-      error: err => {
-        if (err.error) {
-          try {
-            const res = JSON.parse(err.error);
-            this.content = res.message;
-          } catch {
-            this.content = `Error with status: ${err.status} - ${err.statusText}`;
-          }
-        } else {
-          this.content = `Error with status: ${err.status}`;
-        }
-      }
-    });
+    this.userName = this.storageService.getUser().name;
+  }
+
+  goToSimulado() {
+    this.router.navigate(['/simulados']);
   }
 }

@@ -1,5 +1,30 @@
-<div class="container">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
+<div class="row">
+  <div class="profile-column">
+    <div class="profile">
+      <img class="profile-icon" mat-card-sm-image src="/assets/imgs/icon_aviador.png" >
+    </div>
+    <div>
+      Bem vindo comandante, {{userName}}
+    </div>
+  </div>
+  <div>
+    <div class="board-title">
+      <h2>Painel do Aviador</h2>
+    </div>
+    <div class="simulados-column" >
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title class="card-title">Simulado</mat-card-title>
+            <mat-card-subtitle class="card-subtitle">Piloto Privado</mat-card-subtitle>
+            <img mat-card-sm-image src="/assets/imgs/icon_pp.png" >
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+    
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  
 </div>
